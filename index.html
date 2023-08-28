@@ -12,22 +12,38 @@
         font-family: monospace;
         color: mediumblue;
         background-color: floralwhite
+    }
+    a {
+        color: deeppink;
+    }
+    body {
+        max-width: 800px;
+        margin: 2em auto;
     }   
 </style>
 <body>
-    <h1>ez-sweater</h1>
-    <ul>
-        <li>This is currently only in the console.</li>
-        <li>BOR starts exactly at the back shoulder raglan.</li>
-        <li>three big design choices for pattern improv imo:
-            <ul>
-                <li>are you starting with the collar, or picking up your cast on to add a collar later?</li>
-                <li>what stitch pattern are you doing? this determines the sort of increase you do and the frequency of your raglan rounds. if doing brioche or some kind of fisherman's rib, you should probably opt for 2-stitch increases, equalling 16 increases per reglan round instead of the usual 8 in plain stockinette.</li>
-                <li>do you want to do short rows? i don't think this involves extra math since it's much easier to do short rows with giant obvious raglan columns that tell you where you are</li>
-            </ul>
-        </li>
-        <li>I think the math is pretty good right now, so my next issue is making an HTML form that feeds into the console.log variables? constants?</li>
-    </ul>
+    <header>
+        <h1>ez-sweater</h1>
+    </header>    
+    <form action="/_scripts/gauge.js" method="post">
+        <ul>
+            <li>
+                <label for="gauge">Horizontal stitches in 10cm</label>:
+                <input type="number" name="gauge" id="gauge" value="16">
+            </li>
+            <li>
+                <label for="bust">True bust measure in cm</label>:
+                <input type="number" name="bust" id="bust" value="112">
+            </li>
+            <li>
+                <label for="ease">Desired ease in cm</label>:
+                <input type="number" name="ease" id="ease" value="5">
+            </li>
+        </ul>
+    </form>
+    <footer>
+        &copy; 2023, <a href="https://github.com/sailorfe/ez-sweater">repo</a>
+    </footer>
 </body>
 
 </html>
