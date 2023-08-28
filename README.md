@@ -6,7 +6,7 @@ Knitting and code both scratch the math brain and can really only be learnt by d
 
 This is also me challenging myself not to procrastinate with CSS.
 
-## tasks
-- learn functions, lol
-- user input
-- understand js math methods
+## updates (2023-08-28)
+- really really think the math is right this time; the answer was # of raglan rounds are a more human variable than percentages
+- still stressed out about user html input into a form
+- if I am really publishing this I will be writing journalistic copy on Elizabeth, and will doodle a schematic.
