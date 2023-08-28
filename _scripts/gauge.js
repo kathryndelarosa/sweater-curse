@@ -1,28 +1,36 @@
-const gauge = 28;
-const bust = 107;
+const gauge = 16;
+const bust = 112;
 const ease = 5;
 
 // body and neck
 finalMeasure = bust + ease;  
-bodySts = 2 * Math.round((gauge * (finalMeasure / 10)) / 2);
+bodySts = 2 * Math.ceil((gauge * (finalMeasure / 10)) / 2);
 neck = 0.4 * finalMeasure;
-neckSts = 2 * Math.round((gauge * (neck / 10)) / 2);
+neckSts = 2 * Math.ceil((gauge * (neck / 10)) / 2);
 
 // shoulder
-shoulderSts = Math.trunc(0.2 * neckSts);
+shoulderSts = Math.round(neckSts * 0.2);
 
 // chest and back
-chestSts = 2 * Math.round(0.3 * neckSts) / 2;
-halfBack = chestSts / 2;
+chestSts = Math.round(neckSts * 0.3);
 
 // over shoulders
-increased = Math.trunc(1.33 * bodySts);
-sleeveSts = Math.trunc((increased - bodySts) / 2);
+raglan = Math.ceil((bodySts - (2 * chestSts)) / 4);
+increasedTotal = neckSts + (8 * raglan);
+sleeveSts = (increasedTotal - bodySts) / 2;
 underarm = Math.floor(0.2 * sleeveSts);
 
 console.log(`
 Final measure: ${finalMeasure} cm
 Body sts: ${bodySts}
-Neck sts: ${neckSts} sts, from middle back ${halfBack} sts, ${shoulderSts} sts for R shoulder,  ${chestSts} sts across chest, ${shoulderSts} sts for L shoulder, and ${halfBack} sts to BOR.
-After increases over the shoulders: ${increased} sts with ${sleeveSts} sts on hold for each sleeve, picking up ${underarm} sts when you pick them up again.
+
+CAST ON
+Neck: ${neckSts} sts
+Shoulder: ${shoulderSts} sts
+Chest and back: ${chestSts}
+
+AFTER INCREASES
+Total over shoulders: ${increasedTotal} sts after ${raglan} raglan repeats
+Sleeves: ${sleeveSts} sts on hold; pick up ${underarm} sts when starting sleeves.
+Body: ${bodySts} body sts.
 `)
